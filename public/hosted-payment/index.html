@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosted Payment Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <form id="card-form" novalidate autocomplete="off">
+
+    <div class="field-group" id="group-name">
+      <label for="cardholder-name">Cardholder Name</label>
+      <input type="text" id="cardholder-name" name="cardholder-name"
+        placeholder="Full name on card" autocomplete="cc-name" maxlength="60" />
+      <span class="field-error" id="error-name"></span>
+    </div>
+
+    <div class="field-group" id="group-pan">
+      <label for="pan">Card Number</label>
+      <div class="input-with-icon">
+        <input type="text" id="pan" name="pan"
+          pattern="[0-9\s]{13,19}" placeholder="0000 0000 0000 0000" autocomplete="cc-number" maxlength="19" inputmode="numeric" />
+        <span class="card-brand" id="card-brand-icon"></span>
+      </div>
+      <span class="field-error" id="error-pan"></span>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group" id="group-expiry">
+        <label for="expiry">Expiry Date</label>
+        <input type="text" id="expiry" name="expiry"
+          placeholder="MM / YY" autocomplete="cc-exp" maxlength="7" inputmode="numeric" />
+        <span class="field-error" id="error-expiry"></span>
+      </div>
+
+      <div class="field-group" id="group-cvv">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv"
+          placeholder="•••" autocomplete="cc-csc" maxlength="4" inputmode="numeric" />
+        <span class="field-error" id="error-cvv"></span>
+      </div>
+    </div>
+
+  </form>
+  <script src="script.utils.js"></script>
+  <script>
+    window.HPPUtils = { detectBrand, luhn, formatPan, formatExpiry, validateCardFields, BRAND_EMOJIS };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
