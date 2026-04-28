@@ -1,5 +1,3 @@
-const { detectBrand, luhn, formatPan, formatExpiry, validateCardFields, BRAND_EMOJIS } = window.HPPUtils;
-
 const panInput    = document.getElementById('pan');
 const expiryInput = document.getElementById('expiry');
 const cvvInput    = document.getElementById('cvv');
