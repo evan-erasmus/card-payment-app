@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:unit": "jest",
-    "test": "npm run test:units"
+    "test": "npm run test:unit"
   },
   "dependencies": {
     "next": "16.2.4",
